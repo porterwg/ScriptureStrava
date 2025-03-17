@@ -1,5 +1,5 @@
 import React from "react";
-import { ProfileIcon } from "./ProfileIcon";
+import { ProfileIcon } from "./ProfileIcon.tsx";
 
 interface PostProps {
   profileName: string;

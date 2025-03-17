@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
-import { StatusBar } from "./StatusBar";
-import { Header } from "./Header";
-import { Post } from "./Post";
-import { NavigationBar } from "./NavigationBar";
+import * as React from "react";
+import { StatusBar } from "./StatusBar.tsx";
+import { Header } from "./Header.tsx";
+import { Post } from "./Post.tsx";
+import { NavigationBar } from "./NavigationBar.tsx";
 
 export const SocialFeed: React.FC = () => {
   return (

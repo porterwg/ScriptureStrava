@@ -1,5 +1,5 @@
 import React from "react";
-import { NavIcon } from "./NavIcon";
+import { NavIcon } from "./NavIcon.tsx";
 
 export const NavigationBar: React.FC = () => {
   return (
