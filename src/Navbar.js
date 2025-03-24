@@ -56,6 +56,7 @@ const Navbar = () => {
                 <Link to="/groups" onClick={() => setMenuOpen(false)} className="nav-link">Groups</Link>
                 <Link to="/posts" onClick={() => setMenuOpen(false)} className="nav-link">Posts</Link>
                 <Link to="/profile" onClick={() => setMenuOpen(false)} className="nav-link">Profile</Link>
+                <Link to="/gospelLibrary" onClick={() => setMenuOpen(false)} className="nav-link">Gospel Library</Link>
 
             </div>
 
