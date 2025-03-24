@@ -16,7 +16,7 @@ function App() {
         <Route path="/groups" element={<GroupsList />} />
         <Route path="/posts" element={<PostsPage />} />
         <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/" element={<ProfilePage />} />
+        <Route path="/" element={<PostsPage />} />
       </Routes>
     </Router>
   );
