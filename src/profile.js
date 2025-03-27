@@ -1,3 +1,5 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import React, { useState } from "react";
 
 const ProfilePage = () => {
@@ -8,6 +10,17 @@ const ProfilePage = () => {
         "Attend Church",
         "Express Gratitude",
     ]);
+      const navigate = useNavigate();
+
+    const handleLogout = () => {
+        // Show confirmation dialog
+        const isConfirmed = window.confirm("Are you sure you want to log out?");
+        
+        // If user confirms, redirect to the login page
+        if (isConfirmed) {
+            navigate('/login');
+        }
+    };
     const [checkedItems, setCheckedItems] = useState({});
     const [newTask, setNewTask] = useState("");
 
@@ -101,15 +114,13 @@ const ProfilePage = () => {
                     >
                         Edit Profile
                     </button>
-                    <button
+
+                    <button 
+                        onClick={handleLogout} 
                         style={{
-                            padding: "10px 20px",
-                            backgroundColor: "#f44336",
-                            color: "white",
-                            borderRadius: "25px",
-                            border: "none",
-                            cursor: "pointer",
-                            fontSize: "16px",
+                            padding: '10px 20px', backgroundColor: '#f44336', color: 'white', borderRadius: '25px',
+                            border: 'none', cursor: 'pointer', fontSize: '16px'
+
                         }}
                     >
                         Log Out
