@@ -7,6 +7,7 @@ import GroupsList from './groups';
 import PostsPage from './posts';
 import ProfilePage from './profile';
 import GospelLibrary from './gospelLibrary';
+import LoginPage from './LoginPage';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/" element={<PostsPage />} />
         <Route path="/gospelLibrary" element={<GospelLibrary />} />
+        <Route path="/login" element={<LoginPage />} /> 
       </Routes>
     </Router>
   );

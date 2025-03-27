@@ -1,7 +1,19 @@
-// ProfilePage.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProfilePage = () => {
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        // Show confirmation dialog
+        const isConfirmed = window.confirm("Are you sure you want to log out?");
+        
+        // If user confirms, redirect to the login page
+        if (isConfirmed) {
+            navigate('/login');
+        }
+    };
+
     return (
         <div style={{
             backgroundColor: '#f0f2f5', padding: '40px', textAlign: 'center', fontFamily: 'Arial, sans-serif'
@@ -26,10 +38,13 @@ const ProfilePage = () => {
                     }}>
                         Edit Profile
                     </button>
-                    <button style={{
-                        padding: '10px 20px', backgroundColor: '#f44336', color: 'white', borderRadius: '25px',
-                        border: 'none', cursor: 'pointer', fontSize: '16px'
-                    }}>
+                    <button 
+                        onClick={handleLogout} 
+                        style={{
+                            padding: '10px 20px', backgroundColor: '#f44336', color: 'white', borderRadius: '25px',
+                            border: 'none', cursor: 'pointer', fontSize: '16px'
+                        }}
+                    >
                         Log Out
                     </button>
                 </div>
