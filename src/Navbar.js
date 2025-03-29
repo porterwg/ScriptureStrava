@@ -20,9 +20,15 @@ const Navbar = () => {
   return (
     <nav
       style={{
-        position: "relative",
+        position: "fixed", // Make the navbar stick to the top
+        top: 0, // Stick to the top of the page
+        left: 0,
+        width: "100%", // Take up the full width
         padding: "10px",
         borderBottom: "2px solid #ddd",
+        background: "white", // Make sure the navbar has a white background so content doesn't peek through
+        zIndex: 10, // Ensure it's above other content
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)", // Optional, to add a subtle shadow
       }}
     >
       {/* Hamburger Button */}
