@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const GospelLibrary = () => {
@@ -17,9 +17,18 @@ const GospelLibrary = () => {
     } else {
       clearInterval(intervalId);
     }
-
     return () => clearInterval(timer);
   }, [isStudying]);
+
+  useEffect(() => {
+    // Disable scrolling on the entire page when this component is mounted
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      // Re-enable scrolling when leaving this page
+      document.body.style.overflow = "";
+    };
+  }, []);
 
   const formatTime = (totalSeconds) => {
     const mins = Math.floor(totalSeconds / 60);
@@ -30,13 +39,22 @@ const GospelLibrary = () => {
   };
 
   return (
-    <div style={{ height: "100vh", width: "100%", position: "relative" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "calc(100vh - 60px)",
+      }}
+    >
+      {/* Scripture Study Iframe */}
       <iframe
         src="https://www.churchofjesuschrist.org/study?lang=eng"
         title="Scripture Study"
         width="100%"
         height="100%"
-        style={{ border: "none" }}
+        style={{
+          border: "none",
+        }}
       ></iframe>
 
       {/* Floating Timer in Bottom Right */}
